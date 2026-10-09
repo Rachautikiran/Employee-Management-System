@@ -1,7 +1,4 @@
 package com.kiran.inheritance;
-
-
-
 public class Employee {
 
     String name;
@@ -12,6 +9,10 @@ public class Employee {
         this.name = name;
         this.employeeId = employeeId;
         this.salary = salary;
+    }
+    public void displayRole(){
+        System.out.println("Role: Employee");
+
     }
 
     public void displayEmployeeDetails() {
@@ -30,12 +31,10 @@ public class Employee {
         Tester tester = new Tester("Raj",102,60000.0);
         developer.displayEmployeeDetails();
         developer.writeCode();
-
-
         tester.displayEmployeeDetails();
         tester.testApplication();
-
-
+        developer.displayRole();
+        tester.displayRole();
     }
 
 
@@ -48,6 +47,12 @@ class Developer extends Employee{
    public void writeCode(){
        System.out.println("Developer is writing code");
    }
+
+    @Override
+    public void displayRole(){
+        System.out.println("Role: Developer");
+
+    }
 }
 class Tester extends  Employee{
 
@@ -56,6 +61,12 @@ class Tester extends  Employee{
     }
     public void testApplication(){
         System.out.println("Testing application");
+    }
+
+    @Override
+    public void displayRole(){
+        System.out.println("Role: Tester");
+
     }
 
 }
